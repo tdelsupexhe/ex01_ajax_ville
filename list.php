@@ -18,12 +18,8 @@ switch($selectId) {
 
         $tab = [];
         foreach ($result as $region) {
-            //var_dump($region['nomregion']);
-
             $tab[$region['idregion']] = $region['nomregion'];
         }
-        /*print_r($tab);
-        echo json_encode($tab);*/
         break;
 
     case 'ville' :
@@ -39,14 +35,5 @@ switch($selectId) {
     default:
         echo ('ERREUR');
 }
-print_r($tab);
-echo '<br/>';
+
 echo json_encode($tab);
-
-
-
-
-
-
-/*$array = Array ( 'lombardie' => 'Lombardie', 'pouilles' => 'région des Pouilles', 'toscane' => 'Toscane' );
-echo json_encode($array);*/
