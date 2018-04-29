@@ -6,7 +6,7 @@ $('#pays').on('change',function() {
         url: 'list.php',
         type: 'GET',
         dataType: 'json',
-        data: {param1: 'region', param2 : idPays},
+        data: {select: 'region',id : idPays},
         success: function (data) {
 
             var options = '<option value="0">Sélectionner votre région</option>';
@@ -30,7 +30,7 @@ $('#region').on('change',function() {
         url: 'list.php',
         type: 'GET',
         dataType: 'json',
-        data: {param1: idRegion},
+        data: {select: 'ville', id: idRegion},
         success: function (data) {
 
             var options = '<option value="0">Sélectionner votre ville</option>';

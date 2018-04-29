@@ -8,41 +8,40 @@
 include 'config\config.php';
 
 $pdo = \App\Config::getPDO();
-$selectId = $_GET['param1'];
-$id = $_GET['param2'];
+$selectId = $_GET['select'];
+$id = $_GET['id'];
 
 switch($selectId) {
     case 'region' :
         $query = "SELECT idregion, nomregion FROM region WHERE idpays = '$id'";
         $result = $pdo->query($query);
 
-        $tabRegions = [];
+        $tab = [];
         foreach ($result as $region) {
             //var_dump($region['nomregion']);
 
-            $tabRegions[$region['idregion']] = $region['nomregion'];
+            $tab[$region['idregion']] = $region['nomregion'];
         }
-        print_r($tabRegions);
-        echo json_encode($tabRegions);
+        /*print_r($tab);
+        echo json_encode($tab);*/
         break;
 
     case 'ville' :
         $query = "SELECT nomville FROM ville WHERE idregion = '$id'";
         $result = $pdo->query($query);
 
-        $tabVilles = [];
+        $tab = [];
         foreach ($result as $ville) {
-            //var_dump($ville['nomregion']);
-
-            array_push($tabVilles, $ville['nomville']);
+            array_push($tab, $ville['nomville']);
         }
-        print_r($tabVilles);
-        echo json_encode($tabVilles);
         break;
 
     default:
         echo ('ERREUR');
 }
+print_r($tab);
+echo '<br/>';
+echo json_encode($tab);
 
 
 
