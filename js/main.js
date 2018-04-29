@@ -1,6 +1,5 @@
 $('#pays').on('change',function() {
     var idPays = $('#pays')[0].value;
-    console.log(idPays);
 
     $.ajax({
         url: 'list.php',
@@ -10,7 +9,6 @@ $('#pays').on('change',function() {
         success: function (data) {
 
             var options = '<option value="0">Sélectionner votre région</option>';
-            console.log(data);
             $.each(data, function(key, value){
                 options += '<option value="'+key+'">'+value+'</option>';
             });
@@ -24,7 +22,6 @@ $('#pays').on('change',function() {
 
 $('#region').on('change',function() {
     var idRegion = $('#region')[0].value;
-    console.log(idRegion);
 
     $.ajax({
         url: 'list.php',
@@ -34,9 +31,9 @@ $('#region').on('change',function() {
         success: function (data) {
 
             var options = '<option value="0">Sélectionner votre ville</option>';
-            console.log(data);
+
             $.each(data, function(value){
-                options += '<option value="'+value+'">'+value+'</option>';
+                options += '<option value="'+data[value]+'">'+data[value]+'</option>';
             });
             $('#ville').html(options);
         },
