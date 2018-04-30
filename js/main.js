@@ -1,3 +1,21 @@
+$.ajax({
+    url: 'list.php',
+    type: 'GET',
+    dataType: 'json',
+    data: {select: 'pays', id:'0'},
+    success: function (data) {
+        var options = '<option value="0">Sélectionner votre pays</option>';
+        $.each(data, function(key, value){
+            options += '<option value="'+key+'">'+value+'</option>';
+        });
+        $('#pays').html(options);
+    },
+    error: function () {
+        console.log('erreur_pays');
+        console.log(data.select);
+    }
+});
+
 $('#pays').on('change',function() {
     var idPays = $('#pays')[0].value;
 

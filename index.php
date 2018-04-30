@@ -17,16 +17,19 @@ include 'config\config.php';
                     <div class="form-group">
                         <select name="pays" id="pays" class="form-control">
                             <option value="0">Sélectionner votre pays</option>
+                        </select>
+                        <!--<select name="pays" id="pays" class="form-control">
+                            <option value="0">Sélectionner votre pays</option>
                             <?php
-                            $pdo = \App\Config::getPDO();
+/*                            $pdo = \App\Config::getPDO();
                             $listePays = $pdo->query('SELECT idpays, nompays FROM pays');
                             foreach($listePays as $pays){
-                                ?>
-                                <option value="<?= $pays['idpays'] ?>"><?= $pays['nompays'] ?></option>
+                                */?>
+                                <option value="<?/*= $pays['idpays'] */?>"><?/*= $pays['nompays'] */?></option>
                                 <?php
-                            }
-                            ?>
-                        </select>
+/*                            }
+                            */?>
+                        </select>-->
                     </div>
                 </div>
                 <div class="col-sm-4">

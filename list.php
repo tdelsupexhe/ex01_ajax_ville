@@ -12,6 +12,16 @@ $selectId = $_GET['select'];
 $id = $_GET['id'];
 
 switch($selectId) {
+    case 'pays' :
+        $query = "SELECT idpays, nompays FROM pays";
+        $result = $pdo->query($query);
+
+        $tab = [];
+        foreach($result as $pays){
+            $tab[$pays['idpays']] = $pays['nompays'];
+        }
+        break;
+
     case 'region' :
         $query = "SELECT idregion, nomregion FROM region WHERE idpays = '$id'";
         $result = $pdo->query($query);
