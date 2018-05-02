@@ -12,7 +12,6 @@ $.ajax({
     },
     error: function () {
         console.log('erreur_pays');
-        console.log(data.select);
     }
 });
 
@@ -33,7 +32,7 @@ $('#pays').on('change',function() {
             $('#region').html(options);
         },
         error: function () {
-            console.log('erreur');
+            console.log('erreur_region');
         }
     })
 });
@@ -56,7 +55,7 @@ $('#region').on('change',function() {
             $('#ville').html(options);
         },
         error: function () {
-            console.log('erreur');
+            console.log('erreur_ville');
         }
     })
 });
