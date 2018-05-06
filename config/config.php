@@ -10,7 +10,8 @@ namespace App;
 class Config{
     public static function getPDO(){
         try {
-            $pdo = new \PDO('mysql:host=localhost;dbname=villes', 'root', '');
+            $pdo = new \PDO('mysql:host=127.0.0.1;dbname=villes', 'root', '');
+            //$pdo = new PDO("mysql:host=localhost;dbname=villes", "root", "", array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
             return $pdo;
 

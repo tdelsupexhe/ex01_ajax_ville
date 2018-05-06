@@ -8,6 +8,7 @@
 include 'config\config.php';
 
 $pdo = \App\Config::getPDO();
+
 $selectId = $_GET['select'];
 $id = $_GET['id'];
 
@@ -45,5 +46,6 @@ switch($selectId) {
     default:
         echo ('ERREUR');
 }
+
 
 echo json_encode($tab);

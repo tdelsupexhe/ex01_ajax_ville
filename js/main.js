@@ -39,14 +39,13 @@ $('#pays').on('change',function() {
 
 $('#region').on('change',function() {
     var idRegion = $('#region')[0].value;
-
+    console.time("T1");
     $.ajax({
         url: 'list.php',
         type: 'GET',
         dataType: 'json',
         data: {select: 'ville', id: idRegion},
         success: function (data) {
-
             var options = '<option value="0">Sélectionner votre ville</option>';
 
             $.each(data, function(value){
